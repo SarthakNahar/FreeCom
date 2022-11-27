@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}
+Result page for Product Comparison
+{% endblock %}
+{% block content %}
+<h3><br><center>Result for "<i><b>{{ comb }}</i></b>"</center></h3><br>
+<table class="table table-hover table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <!-- Your Columns HERE -->
+            <!--<th scope="col">ID</th>-->
+            <th scope="col">Features</th>
+            <th scope="col">Details of Product 1</th>
+            <th scope="col">Details of Product 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Your rows inside the table HERE: -->
+        {% for item in det %}                
+          <tr>
+             <td> 
+                {{ item['Features'] }}
+            </td>
+            
+            <!--{% set img = item.Features %}-->
+             <td>
+              {% if item['Details of Product 1'].startswith('https') %}
+                <img src="{{ item['Details of Product 1'] }}">
+              {% else %}
+                {{ item['Details of Product 1'] }}
+              {% endif %}
+            </td>
+             <td>
+            {% if item['Details of Product 1'].startswith('https') %}
+              <img src="{{ item['Details of Product 2'] }}">
+            {% else %}
+              {{ item['Details of Product 2'] }}
+            {% endif %}
+             </td>
+          </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block style %}
+<style>
+  table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  th {
+    text-align: center;
+    vertical-align: middle;
+  }
+    td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  300px;
+  height: 300px;
+  object-fit: contain;
+  }
+  body {
+  background-color: #212121;
+  color: white
+  }
+
+</style>
+{% endblock %}

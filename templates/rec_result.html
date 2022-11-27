@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}
+Result page for Recommendation System
+{% endblock %}
+{% block content %}
+<h3><center><br>Popularity Based Recommendation Engine </center></h3><br>
+    <table class="table table-hover table-dark table-striped table-bordered">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <!--<th scope="col">ID</th>-->
+                <th scope="col">Top</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Info</th>
+                <th scope="col">Score</th>
+                <th scope="col">Link to Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in top %}                
+              <tr>
+                 <td># {{ item['rank'] }}</td>
+                 <td><img src='{{ item["image"] }}'></td>
+                 <td>{{ item["name"] }}</td>
+                 <td>{{ item["score"] }} </td>
+                 <td>
+                    <a href="{{ item['prod_link'] }}" class="btn btn-primary btn-lg active btn-sm" role="button" aria-pressed="true">Buy Now</a>
+                     
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block style %}
+<style>
+  table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  th {
+    text-align: center;
+    vertical-align: middle;
+  }
+        td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  100px;
+  height: 100px;
+  object-fit: contain;
+  }
+  body {
+  background-color: #212121;
+  color: white
+  }
+</style>
+{% endblock %}

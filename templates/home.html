@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block title %}
+FreeCom
+{% endblock %}
+{% block search %}
+<!--<form class="form-inline" action="{{url_for('result_page')}}" method="GET" onsubmit="checkforempty()">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search for product" aria-label="Search" name="query" required>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onsubmit="checkforempty()">Search</button>
+</form>-->
+{% endblock %}
+{% block content %}
+<div class="bg-image" >
+     <!-- style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            height: 190vh">-->
+<!--<h1>About Page </h1><br><br>-->
+<div class="cus">
+<img src="https://images.squarespace-cdn.com/content/v1/5e2989d8e4ed2f69fcde61cd/1592558791412-UX18TG8Z2DD2K5TKW01W/About-Us.png?format=350w">
+</div>
+<div class="card-columns f-color view overlay zoom">
+  
+  <div class="card text-center"><a href="{{url_for('product')}}" style="color: black">
+    <img src="https://i.ytimg.com/vi/vRvnH1Ydp54/maxresdefault.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+      <h5 class="card-title"><b>Product Comparision</b></h5>
+      <p class="card-text">In this we can compare two products i.e. either mobile or laptop.
+        Why only mobile and laptop?
+        Because these two categories have most amount of specifications i.e. fingerprint sensor, processor, RAM etc. Also it needs clear and concise analysis of specifications.</p>
+      </blockquote>
+      </div>
+    </div></a>
+    
+    <div class="card view text-center"><a href="{{url_for('qr_disp')}}" style="color: black">
+      <img src="https://alexablockchain.com/wp-content/uploads/2022/02/US-Clothing-Firm-Nitches-Inc.-Embracing-Web-3.0-Revolution.jpg" class="card-img-top img-fluid" alt="...">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+        <h5 class="card-title"><b>Is the Product Authentic or Not?</b></h5>
+        <p class="card-text">You can verify whether the product which you have bought from our site genuine or no, by using our QR-Code based Scanner.
+          You can use this to distinguish authentic products.
+          Eg. Reebok, Nike, iPhone etc. all gives QR-Codes and Bar-Codes for checking the authenticity of the product. </p>
+        </blockquote>
+        </div></a>
+    </div>
+
+    <div class="card view overlay zoom text-center"><a href="{{url_for('redeem')}}" style="color: black">
+      <img src="https://i.pinimg.com/originals/eb/2a/8f/eb2a8f4ddfb50c23712a3cd0d5cc2a3a.gif" class="card-img-top img-fluid" alt="...">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+      <h5 class="card-title"><b>Redeem Code (Steganography)</b></h5>
+      <p class="card-text">It will allow user to redeem their code. User will upload the creative image/logo/art in this, it will decode the image and show the hidden code to user. User can use this code on the respective websites, to get the offer/discount.  </p>
+      </blockquote>
+    </div>
+  </div></a>
+
+  <div class="card">
+    <img src="https://i0.wp.com/thynxlabs.com/wp-content/uploads/2020/02/ecommerce-illustration.gif?resize=580%2C435&ssl=1" class="card-img-top" alt="...">
+  </div>
+
+  <div class="card p-3 text-center"><a href="{{url_for('qrComp_disp')}}" style="color: black">
+    <img src="https://storage.googleapis.com/support-kms-prod/mQmcrC93Ryi2U4x5UdZNeyHQMybbyk71yCVm" class="card-img-top" alt="...">
+    <blockquote class="blockquote mb-0">
+      <p><b>QR-Code based Comparision</b></p>
+        <p>It allows the user to compare the Products using their respective QR-codes. Customers can get the specification of a products on just a touch or scan.</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          cited in <cite title="Source Title">Price comparison sites explained - Which? - Which.co.uk</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div></a>
+  
+  <div class="card text-center"><a href="{{url_for('Rec_sys')}}" style="color: black">
+    <img src="https://ginsyblog.files.wordpress.com/2017/01/stk-descriptive-insurance-leadspace-aniamted-by-ibm-analytic.gif?w=640" class="card-img-top" alt="...">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+      <h5 class="card-title"><b>Product Analysis (Popularity Based Recommendation Engine)</b></h5>
+      <p class="card-text">It helps the customers to know the trending or popular products availabe on e-commerce website.It also helps companies to analyze the trends in the market.</p>
+    </blockquote>
+      <p class="card-text"><small class="text-muted"><br>Last updated few mins ago</small></p>
+    </div>
+  </div></a>
+  <div class="card text-center"><a href="{{url_for('price')}}" style="color: black">
+    <img src="https://images.benefitspro.com/contrib/content/uploads/sites/412/2018/06/PriceComparison.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+      <h5 class="card-title"><b>Product Search</b></h5>
+      <p class="card-text">This site take your input and find top 5 products both from SnapDeal and Flipkart on the basis of relevence, popularity and offers. Their respective links are also present for your convenience. </p>
+    </blockquote>
+      <p class="card-text"><small class="text-muted"><br>Last updated few mins ago</small></p>
+    </div>
+  </div></a>
+
+  <div class="card">
+    <img src="https://cdn.dribbble.com/users/214929/screenshots/4366947/dribbble-shot_6.gif" class="card-img-top" alt="...">
+  </div>
+
+      <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <img src="https://media1.thehungryjpeg.com/thumbs2/ori_3656714_3etd3oh0w1mtjqnx8xcidud34zrgk4erpvvozvm2_monogram-fc-logo-design.jpg" class="card-img-top" alt="...">
+          <p><b>FC - FreeCom</b> <br> It is an Automated Web Scraping Bot with Computer Vision.
+          </p>
+          <footer class="blockquote-footer text-white">
+            <small>
+              by <cite title="Source Title"><br> 
+                Deva Ganesh Nair (19100BTCSAII05257)<br>
+                Divyam Pithawa (19100BTCSAII05259)<br>
+                Janish Pancholi (19100BTCSAII05265)<br>
+                Sarthak Nahar (19100BTCSAII05283)</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>  
+  
+</div>
+</div>
+
+{% endblock %}
+{% block style %}
+<style>
+
+ .cus{
+  text-align: center;
+  padding: 40px 40px;
+ }
+ body {
+  background-color: #212121;
+  color: white
+  }
+
+  .f-color{
+    color: black;
+  }
+</style>
+{% endblock %}

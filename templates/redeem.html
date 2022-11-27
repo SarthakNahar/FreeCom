@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+Redeem Page
+{% endblock %}
+{% block content %}
+<div class="bg-image" 
+     style="background-image: url('https://wallpapercave.com/wp/wp2740689.jpg');
+            height: 100vh">
+
+<script>
+    function checkforempty(){
+        if(document.getElementById("im1").files.length == 0){
+            alert('Please Upload a File');
+            return false;
+        }
+    }
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+            <h3 class="card-title text-center mb-5 fw-light fs-5"><b>Redeem Code</b></h3>
+            <form action="{{url_for('redeem')}}" method="post">
+                <div class="form-floating mb-3">
+                <label for="image">Select a Image:</label>
+                <input id = "im1" type="file" name="image" required>
+                </div>
+                <div class="d-grid">
+                <center><button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Submit</button></center>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

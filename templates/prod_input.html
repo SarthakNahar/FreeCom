@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+Product Input Page
+{% endblock %}
+{% block content %}
+<div class="bg-image" 
+     style="background-image: url('https://images.hdqwalls.com/download/retrowave-tron-grid-9k-1920x1080.jpg');
+            height: 100vh">
+<script>
+  function checkforempty(){
+    if ((document.getElementById('n1').value == "") && (document.getElementById('n2').value == "")){
+      alert('Please Fill Both the fields.');
+      return false;
+    }
+    else if (document.getElementById('n1').value == ""){
+      alert('Please Fill the Marked Field 1.');
+      return false;
+    }
+    else if (document.getElementById('n2').value == ""){
+      alert('Please Fill the Marked Field 2.');
+      return false;
+    }
+    else {
+      $('#loading').show();
+    }
+  }
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+          <h3 class="card-title text-center mb-5 fw-light fs-5"><b>Product Comparison</b></h3>
+          <form action="{{url_for('product_result')}}" method="post" onsubmit="checkforempty()">
+            <fieldset>
+            <div class="form-floating mb-3">
+              <input type="text" id = "n1" class="form-control" name="nm1" placeholder="Enter First Product Name" required>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" id = "n2" class="form-control" name="nm2" placeholder="Enter Second Product Name" required>
+            </div>
+            <div class="d-grid">
+              <center><button class="btn btn-primary btn-login fw-bold" type="submit" onclick="checkforempty()">Submit</button></center>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="loading" style="display:none;"><img src="https://thumbs.gfycat.com/OddRapidAngwantibo-size_restricted.gif" alt="" /></div>
+</div>
+
+{% endblock %}
+{% block style %}
+<style>
+  div img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  }
+
+  .f-color{
+    color: black;
+  }
+  h1 {text-align: center;}
+</style>
+{% endblock %}

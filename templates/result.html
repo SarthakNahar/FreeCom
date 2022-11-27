@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}
+Result page
+{% endblock %}
+{% block content %}
+            <tr></center>
+<h3><center>Result for "<i><b>{{ x_name }}</i></b>"</center></h3>
+    <table class="table table-hover table-dark table-striped table-bordered">
+        <thead>
+                <!-- Your Columns HERE -->
+                <!--<th scope="col">ID</th>-->
+                <th scope="col">Sold by</th>
+                <th scope="col">Product Information</th>
+                <th scope="col">Price</th>
+                <th scope="col">Link to Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}                
+              <tr>
+                 <td><img src='{{ item["Sold By"] }}'></td>
+                 <td>{{ item["Product Info"] }}</td>
+                 <td>{{ item["Price"] }} </td>
+                 <td>
+                    <a href="{{ item['Link To Site'] }}" class="btn btn-primary btn-lg active btn-sm" role="button" aria-pressed="true">Buy Now</a>
+                     
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block style %}
+<style>
+    table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  th {
+    text-align: center;
+    vertical-align: middle;
+  }
+    td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  100px;
+  height: 100px;
+  object-fit: contain;
+  }
+  body {
+  background-color: #212121;
+  color: white
+  }
+</style>
+{% endblock %}

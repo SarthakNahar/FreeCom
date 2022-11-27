@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+QR-Code Scanner page
+{% endblock %}
+
+{% block content %}
+<div class="bg-image" 
+     style="background-image: url('https://www.itl.cat/pngfile/big/242-2421741_desktop-wallpaper-8k.jpg');
+            height: 100vh">
+
+<h3><b><br>Live Streaming for QR-Code-based Authentication</b></h3>
+
+<div>
+    <img src="{{ url_for('video_qr') }}" width="50%"/>
+</div>
+</div>
+{% endblock %}
+{% block style %}
+<style>
+
+  .f-color{
+    color: black;
+  }
+  img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  }
+  h3 {text-align: center;}
+</style>
+{% endblock %}

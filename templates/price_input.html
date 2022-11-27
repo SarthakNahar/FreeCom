@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}
+Product Input Page
+{% endblock %}
+{% block content %}
+<div class="bg-image" 
+     style="background-image: url('https://www.kenjiroi.com/wp-content/uploads/2020/04/Blog-Amazon-FBA-Tools-for-Sellers-2020-07.png');
+            height: 100vh">
+<script>
+  function checkforempty(){
+    if (document.getElementById('n1').value == ""){
+      alert('Please Fill the Marked Field');
+      return false;
+    }
+    else {
+      $('#loading').show();
+    }
+  }
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+          <h3 class="card-title text-center mb-5 fw-light fs-5"><b>Product Search</b></h3>
+          <form action="{{url_for('result_page')}}" method="post" onsubmit="checkforempty()">
+            <fieldset>
+            <div class="form-floating mb-3">
+              <input type="text" id = "n1" class="form-control" name="nm1" placeholder="Enter Product Name" required>
+            </div>
+              <center><button class="btn btn-primary btn-login fw-bold" type="submit" onclick="checkforempty()">Search</button></center>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+     <div id="loading" style="display:none;"><img src="https://thumbs.gfycat.com/OddRapidAngwantibo-size_restricted.gif" alt="" /></div>
+</div>
+</div>
+
+{% endblock %}
+{% block style %}
+<style>
+  div img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  }
+
+  .f-color{
+    color: black;
+  }
+  h1 {text-align: center;}
+</style>
+{% endblock %}
